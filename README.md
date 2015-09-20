@@ -24,10 +24,10 @@ These are instructions to setup your environment to create and push a new vagran
 
 #### Packer run
 * Adjust the values in variables.json to fit your user. For example, change `atlas_username` to your atlas username.
-To have Atlas build it for you, run this from the root directory
+* **To have Atlas build it for you** run this from the root directory
 `packer push -var-file=variables.json ubuntu.json`
 
-* To build it yourself and push to atlas, use this command
+* **To build it yourself and push to atlas** use this command
 `packer build  -var-file=variables.json ubuntu.json`
 
 
