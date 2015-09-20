@@ -1,17 +1,7 @@
 {
-  "push": {
-    "name": "bbarke/packer_vagrant_presentation",
-    "vcs": true,
-    "include": [
-	  "scripts/*.sh"
-	],
-	"exclude" : [
-      "packer_cache"
-    ]
-  },
   "variables": {
-    "atlas_username": "{{env `ATLAS_USERNAME`}}",
-    "atlas_name": "packer_vagrant_presentation",
+    "atlas_username": "",
+    "atlas_build_name": "packer_vagrant_presentation",
     "headless": "true",
     "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04.3-server-amd64.iso",
     "iso_checksum": "a3b345908a826e262f4ea1afeb357fd09ec0558cf34e6c9112cead4bb55ccdfb",
@@ -22,6 +12,16 @@
     "ssh_wait_timeout": "10000s",
     "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p",
     "disk_size": "20480"
+  },
+  "push": {
+    "name": "{{ user `atlas_username`}}/{{ user `atlas_build_name`}}",
+    "vcs": true,
+    "include": [
+	  "scripts/*.sh"
+	],
+	"exclude" : [
+      "packer_cache"
+    ]
   },
   "builders": [
     {
@@ -76,7 +76,7 @@
     {
       "type": "atlas",
       "only": ["virtualbox-iso"],
-      "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
+      "artifact": "{{user `atlas_username`}}/{{user `atlas_build_name`}}",
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "virtualbox",
