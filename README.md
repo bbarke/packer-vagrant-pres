@@ -10,7 +10,6 @@ Packer and Vagrant will need to be installed for this to work.
 * Clone this repo
 
 ## Running
-This is typically done on Linux, but there are ways to run it on windows.
 
 ### Packer
 These are instructions to setup your environment to create and push a new vagrant box to your atlas account so others can view it.
@@ -18,10 +17,10 @@ These are instructions to setup your environment to create and push a new vagran
 #### Setup Atlas (If you want to push to your own repo)
 * An atlas account needs to be created. Create one [here](https://atlas.hashicorp.com/account/new)
 * Create a new token [here](https://atlas.hashicorp.com/settings/tokens)
-Linux:
-* place this your .profile folder or run it from the command line: `export ATLAS_TOKEN=”<the generated token>”`. If you run it from the command line, be sure to save it somewhere for later use. If you do lose it, you can simply create another one and delete the old one
-Windows:
-* Open up the command prompt and run this: `setx ATLAS_TOKEN <the generated token>`
+* Linux:
+  * place this your .profile folder or run it from the command line: `export ATLAS_TOKEN=”<the generated token>”`. If you run it from the command line, be sure to save it somewhere for later use. If you do lose it, you can simply create another one and delete the old one
+* Windows:
+  * Open up the command prompt and run this: `setx ATLAS_TOKEN <the generated token>`
 
 #### Packer run
 * Adjust the values in variables.json to fit your user. For example, change `atlas_username` to your atlas username.
