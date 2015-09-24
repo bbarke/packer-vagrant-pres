@@ -32,3 +32,8 @@ These are instructions to setup your environment to create and push a new vagran
 
 
 Atlas also has a great tutorial that can be run from here: https://atlas.hashicorp.com/tutorial/packer-vagrant/1
+
+
+### Vagrant
+
+Simply cd into the `vagrant/` folder and run `vagrant up`
